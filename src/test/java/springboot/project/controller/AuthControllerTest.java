@@ -50,7 +50,7 @@ class AuthControllerTest {
 
         doNothing().when(authService).registerStudent(any(RegisterRequestDTO.class));
 
-        mockMvc.perform(post("/api/auth/register")
+        mockMvc.perform(post("/api/v1/auth/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(requestDTO)))
                 .andExpect(status().isCreated())
